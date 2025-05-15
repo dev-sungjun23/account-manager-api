@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "6428f744-a76b-4339-8bed-0656910863ae",
+		"name": "Account API",
+		"description": "REST API 기반 계좌 관리 프로그램",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44894955"
+	},
+	"item": [
+		{
+			"name": "Create Account API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/accounts?owner=유성준&initialBalance=10000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "owner",
+							"value": "유성준"
+						},
+						{
+							"key": "initialBalance",
+							"value": "10000"
+						}
+					]
+				},
+				"description": "## 🧾 엔드포인트 설명 (한글 버전)\n\n### 📌 요청 설명\n\n이 엔드포인트는 새로운 계좌를 생성하는 POST 요청입니다.  \n`http://localhost:8080/accounts` 경로에 `owner`(소유자 이름)와 `initialBalance`(초기 잔액)를 쿼리 파라미터로 전달해야 합니다.\n\n### 📤 요청 본문\n\n이 요청은 **본문(Request Body)** 을 사용하지 않습니다.  \n  \n→ 모든 데이터는 **쿼리 파라미터**로 전달됩니다.\n\n### 📥 응답\n\n- **HTTP 상태 코드**: 200 OK\n    \n- **Content-Type**: `text/plain`\n    \n- **응답 내용**: 계좌가 생성되었음을 나타내는 간단한 텍스트 메시지  \n      \n    (예: `\"유성준님의 계좌가 생성되었습니다. 초기 잔액: 10000원\"`)"
+			},
+			"response": []
+		}
+	]
+}
