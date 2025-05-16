@@ -3,6 +3,7 @@ package com.example.account_manager_api.controller;
 import com.example.account_manager_api.dto.AccountCreateRequest;
 import com.example.account_manager_api.dto.AccountResponse;
 import com.example.account_manager_api.dto.AccountUpdateRequest;
+import com.example.account_manager_api.model.Account;
 import com.example.account_manager_api.service.AccountService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
@@ -33,7 +34,8 @@ public class AccountController {
     @Operation(summary = "계좌 생성", description = "소유자 이름과 초기 잔액을 받아 계좌를 생성합니다.")
     @PostMapping
     public String createAccount(@RequestBody @Valid AccountCreateRequest request) {
-        return accountService.createAccount(request.getOwner(), request.getInitialBalance());
+        Account account = accountService.createAccount(request.getOwner(), request.getInitialBalance());
+        return account.getOwner() + "님의 계좌가 생성되었습니다. 초기 잔액 : " + account.getBalance() + "원";
     }
 
     @GetMapping

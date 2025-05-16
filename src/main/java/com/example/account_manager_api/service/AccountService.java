@@ -14,10 +14,10 @@ import java.util.NoSuchElementException;
 public class AccountService {
     private final List<Account> accounts = new ArrayList<>();
 
-    public String createAccount(String owner, int initialBalance) {
+    public Account createAccount(String owner, int initialBalance) {
         Account account = new Account(owner, initialBalance);
         accounts.add(account);
-        return owner + "님의 계좌가 생성되었습니다. 초기 잔액 : " + initialBalance + "원";
+        return account;
     }
 
     public List<AccountResponse> getAllAccounts() {
