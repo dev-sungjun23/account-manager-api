@@ -24,4 +24,12 @@ public class Account {
     public int getBalance() {
         return balance;
     }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
 }

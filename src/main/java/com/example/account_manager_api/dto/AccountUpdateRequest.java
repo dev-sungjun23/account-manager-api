@@ -4,8 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
-@Schema(description = "계좌 생성 요청")
-public class AccountCreateRequest {
+public class AccountUpdateRequest{
 
     @Schema(description = "계좌 소유자 이름", example = "유성준")
     @NotBlank(message = "소유자 이름은 필수입니다.")
@@ -13,9 +12,9 @@ public class AccountCreateRequest {
 
     @Schema(description = "초기 잔액", example = "10000")
     @Min(value = 0, message = "초기 잔액은 0원 이상이어야 합니다.")
-    private int initialBalance;
+    private int balance;
 
-    public AccountCreateRequest() {}
+    public AccountUpdateRequest() {}
 
     public String getOwner() {
         return owner;
@@ -25,11 +24,11 @@ public class AccountCreateRequest {
         this.owner = owner;
     }
 
-    public int getInitialBalance() {
-        return initialBalance;
+    public int getBalance() {
+        return balance;
     }
 
-    public void setInitialBalance(int initialBalance) {
-        this.initialBalance = initialBalance;
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 }
