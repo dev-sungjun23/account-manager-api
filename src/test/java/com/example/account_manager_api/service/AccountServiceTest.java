@@ -3,20 +3,24 @@ package com.example.account_manager_api.service;
 import com.example.account_manager_api.dto.AccountResponse;
 import com.example.account_manager_api.dto.AccountUpdateRequest;
 import com.example.account_manager_api.model.Account;
+import com.example.account_manager_api.repository.AccountRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 public class AccountServiceTest {
+
+    @Autowired
     private AccountService accountService;
 
-    @BeforeEach
-    void setUp(){
-        accountService = new AccountService();
-    }
+    @Autowired
+    private AccountRepository accountRepository;
 
     @Test
     void 계좌_생성_성공() {
@@ -37,7 +41,7 @@ public class AccountServiceTest {
     @Test
     void 계좌_조회_성공() {
         //given
-        Account created = accountService.createAccount("유성준", 5000);
+        Account created = accountRepository.save(new Account("유성준", 50000));
         long id = created.getId();
 
         //when
