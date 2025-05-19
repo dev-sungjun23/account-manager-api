@@ -28,15 +28,15 @@
 
 ---
 
-## 🌐 Swagger 문서
+### 📑 Swagger API 테스트 화면
 
-- Swagger UI: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)  
-- Swagger 문서는 `springboot-3.1` 브랜치 기준으로 확인 가능합니다.
-
-> ⚠️ 참고: springdoc-openapi는 Spring Boot 3.2.x와 완벽히 호환되지 않아  
-> Swagger UI는 `springboot-3.1` 브랜치(Spring Boot 3.1.9 기준)에서 정상 작동합니다.
-
-![Swagger UI](images/swagger-create-account.png)
+| 메서드 | 설명           | 화면 |
+|--------|----------------|------|
+| `POST` | 계좌 생성       | ![Swagger Create](images/swagger-create-account.png) |
+| `GET`  | 계좌 단일 조회   | ![Swagger Get One](images/swagger-get-account.png) |
+| `GET`  | 계좌 전체 조회   | ![Swagger Get All](images/swagger-get-all.png) |
+| `PUT`  | 계좌 수정       | ![Swagger Update](images/swagger-update-account.png) |
+| `DELETE` | 계좌 삭제     | ![Swagger Delete](images/swagger-delete-account.png) |
 
 ---
 
